@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management App Info</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        ol {
+            padding: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+
+        ul li:before {
+            content: "\2022";
+            color: #4CAF50;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .actions {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .actions a {
+            margin: 0 10px;
+            padding: 10px 20px;
+            text-decoration: none;
+            background-color: #333;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .add-link a {
+            padding: 10px 20px;
+            text-decoration: none;
+            background-color: #4caf50;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .add-link a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>INFO APLIKASI MANAJEMEN KARYAWAN</h1>
+        <div class="add-link">
+            <a href="{% url 'employee_list' %}" class="actions">Back to Employee List</a>
+        </div>
+    </header>
+    <h1><i><center>ini aplikasi apaan sih?</center></i></h1>
+    <ol>
+        <li>Ini adalah aplikasi untuk mendata karyawan (nama, jabatan/posisi, serta gaji pokok/basic salary)</li>
+        <li>Tombol <b><i>Detail</i></b> akan memberikan data lengkap dari karyawan tersebut serta bisa mengedit apakah karyawan tersebut menerima bonus atau tidak</li>
+        <li><b><i>Edit</i></b> untuk mengedit data karyawan</li>
+        <li><b><i>Delete</i></b> untuk menghapus data karyawan</li>
+        <li><b><i>Add Employee</i></b> untuk menambahkan data karyawan baru:
+            <ul>
+                <li>Masukkan nama dan posisi/jabatan dari karyawan baru tersebut</li>
+                <li>Gaji pokok (basic salary) akan otomatis terinput berdasarkan posisi/jabatan yang dimasukkan</li>
+            </ul>
+        </li>
+        <li>Daftar Jabatan yang tersedia dan basic salary (gaji pokok nya):
+            <ul>
+                <li>Pekerja Magang: Rp. 2.500.000</li>
+                <li>Staff Junior: Rp. 4.000.000</li>
+                <li>Staff Senior: Rp. 5.200.000</li>
+                <li>Team Leader: Rp. 7.000.000</li>
+                <li>Spesialis Departemen: Rp. 8.320.000</li>
+                <li>Kepala Departemen: Rp. 9.000.000</li>
+                <li>Asisten Eksekutif: Rp. 15.000.000</li>
+                <li>Anggota Dewan: Rp. 18.750.000</li>
+                <li>Eksekutif C-Suite: Rp 22.000.000</li>
+                <li>Wakil Presiden: Rp. 25.000.000</li>
+                <li>Presiden: Rp 32.000.000</li>
+                <li>Chief Executive Officer (CEO): Rp. 55.000.000</li>
+            </ul>
+        </li>
+        <li>Bonus adalah 10% dari gaji pokok</li>
+        <li><b><i>Generate Salary Slip</i></b> untuk mencetak slip gaji dari karyawan tersebut
+            <ul>
+                <li>nanti akan berupa .pdf yang langsung <b><i>auto download</i></b> 
+                    (harusnya... kalau ngga bisa langsung kedownload dalam bentuk pdf instal dulu reportlab --> pip install reportlab)</li>
+            </ul>
+        </li>
+    </ol>
+</body>
+</html>

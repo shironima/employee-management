@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Detail</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+        }
+
+        h1 {
+            margin-top: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        h2 {
+            margin-top: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            text-align: center;
+            color: #666;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        input {
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .actions {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .actions a {
+            margin: 0 10px;
+            padding: 10px 20px;
+            text-decoration: none;
+            background-color: #333;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .actions a:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Employee Detail</h1>
+    </header>
+
+    <h2>{{ employee.name }}</h2>
+    <p>Position: {{ employee.position }}</p>
+    <p>Basic Salary: Rp{{ employee.basic_salary|floatformat:2 }}</p>
+    
+    <form method="post">
+        {% csrf_token %}
+        {{ bonus_form }}
+        <button type="submit">Update Bonus</button>
+    </form>
+
+    <div class="actions">
+        <a href="{% url 'generate_salary_slip' pk=employee.pk %}">Generate Salary Slip</a>
+        <a href="{% url 'employee_list' %}">Back to Employee List</a>
+    </div>
+</body>
+</html>

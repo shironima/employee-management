@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Slip</title>
+</head>
+<body>
+    <h1>Salary Slip for {{ employee.name }}</h1>
+    
+    <p>Position: {{ employee.position }}</p>
+    <p>Basic Salary: Rp{{ employee.basic_salary|floatformat:2 }}</p>
+    <p>Bonus: {% if employee.bonus %}Yes{% else %}No{% endif %}</p>
+    <p>Total Salary: Rp{{ gaji_total|floatformat:2 }}</p>
+
+</body>
+</html>
